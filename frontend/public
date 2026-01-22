@@ -1,1 +1,75 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- Title and Description for SEO -->
+  <title>Expert Viewer - Advanced Document & Image Viewer</title>
+  <meta name="description" content="An advanced viewer for documents, images, and data visualizations with expert-level features like zoom, annotations, and real-time collaboration." />
+  <meta name="keywords" content="document viewer, image viewer, data visualization, annotations, zoom, collaboration" />
+  <meta name="author" content="Your Name or Company" />
+  
+  <!-- Open Graph / Social Media Metadata -->
+  <meta property="og:title" content="Expert Viewer - Advanced Viewer" />
+  <meta property="og:description" content="View and interact with documents and images at expert level with advanced features." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/assets/preview-image.png" />
+  
+  <!-- Favicon and Touch Icons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css" />
+  
+  <!-- Fonts (Use only what is necessary for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Critical JS or Polyfills for older browsers -->
+  <script>
+    // Example: Polyfill for older browsers if needed
+    if (!window.Promise) {
+      document.write('<script src="https://cdn.polyfill.io/v3/polyfill.min.js"><\/script>');
+    }
+  </script>
+  
+  <!-- SEO and Accessibility Enhancements -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#317EFB" />
+  
+  <!-- Preload key assets for performance -->
+  <link rel="preload" href="/scripts/viewer.bundle.js" as="script" />
+  <link rel="preload" href="/assets/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+</head>
+<body>
+  <!-- Main Viewer Container -->
+  <div id="viewer-root" role="main" aria-label="Document and Image Viewer">
+    <!-- The viewer app will mount here -->
+  </div>
+  
+  <!-- Accessibility: Skip to content link -->
+  <a href="#viewer-root" class="skip-link">Skip to viewer</a>
+  
+  <!-- Loading fallback for no-JS users -->
+  <noscript>
+    <p>Please enable JavaScript to use the expert viewer features.</p>
+  </noscript>
+  
+  <!-- Main JavaScript Bundle -->
+  <script src="/scripts/viewer.bundle.js" defer></script>
+  
+  <!-- Analytics or Error Tracking (deferred) -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</body>
+</html>
