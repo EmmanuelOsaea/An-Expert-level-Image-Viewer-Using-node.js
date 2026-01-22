@@ -94,7 +94,7 @@ class ErrorHandler {
    */
   _showUserNotification(error) {
     // Example: simple alert (replace with modal/toast in real app)
-    alert(`An unexpected error occurred: ${error.message}. Please try again or contact support.`);
+    toast(`An unexpected error occurred: ${error.message}. Please try again or contact support.`);
   }
 }
 
@@ -110,3 +110,19 @@ const errorHandler = new ErrorHandler({
 });
 
 export default errorHandler;
+
+
+try {
+  // Viewer logic that might throw
+} catch (error) {
+  errorHandler.handleError(error, { component: 'ImageViewer', action: 'loadImage', imageId: 'img123' });
+}
+
+
+      window.addEventListener('error', (event) => {
+  errorHandler.handleError(event.error || new Error(event.message));
+});
+
+window.addEventListener('unhandledrejection', (event) => {
+  errorHandler.handleError(event.reason || new Error('Unhandled promise rejection'));
+});
